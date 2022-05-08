@@ -6,7 +6,7 @@ output: html_notebook
 ```{bash}
 git status
 git add samplesize.Rmd
-git commit -m  "Commit Message"
+git commit -m  "binomial function created"
 git push -u origin_2 main
 ```
 
