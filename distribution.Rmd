@@ -6,7 +6,7 @@ output: html_notebook
 ```{bash}
 git status
 git add distribution.Rmd samplesize.Rmd
-git commit -m  "assessment of outputs for dnorm, pnorm, qnorm and rnorm"
+git commit -m  "added poisson distribution"
 git push -u origin_3 main
 ```
 ## Assessment of the normal distribution function for different values of x and y
@@ -114,4 +114,41 @@ plot(vector_assess,rnorm(vector_assess,mean = mean,sd = sd),type = "b",xlab = "i
 
 # qnorm(vector_assess,mean = mean,sd = sd)
 ```
+# Poisson distribution
+```{r}
+poisson_distribution = function(lambda,x){
+ 
+  y = exp(-lambda) * lambda^x/factorial(x)
+  return(y)
+}
 
+# where x is the distribution 
+# lambda is the mean number of occurrences in the interval
+
+poisson_distribution(lambda = 2,x = 3)
+
+# vector_assess = seq.int(from = -1000,to = 1000,by = 1)
+vector_assess = seq.int(from = 0,to = 10,by = 0.001)
+x_vector = c()
+y_vector = c()
+
+lambda_vector = c(1,2,3,4,5,6,7,8,9)
+
+for (i in seq_along(lambda_vector)){
+for (j in seq_along(vector_assess)){
+  lambda = lambda_vector[i]
+  x_vector[j] = vector_assess[j]
+  y_vector[j] = poisson_distribution(lambda = lambda_vector[i],x = vector_assess[j])
+}
+  if(i == min(seq_along(lambda_vector))){
+  plot(x_vector,y_vector,type = "b")  
+    # print(min(seq_along(lambda_vector)))
+  }
+  else{
+    lines(x_vector,y_vector,type = "b",col = "blue")
+  }
+  
+
+}
+
+```
