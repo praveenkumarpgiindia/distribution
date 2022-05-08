@@ -6,7 +6,7 @@ output: html_notebook
 ```{bash}
 git status
 git add samplesize.Rmd
-git commit -m  "binomial function created"
+git commit -m  "binomial function title updated"
 git push -u origin_2 main
 ```
 
@@ -66,7 +66,7 @@ for (i in seq_along(vector_assess)) {
 
 plot(x_vector,y_vector,type = "b")
 ```
-
+# Binomial function created for estimation of probability of success for a given event of interest on providing probability of success and failure along with total number of trials
 ```{r}
 binomial = function(p , q, n, x){
   p = choose(n, x) * p^x * q^(n-x)
