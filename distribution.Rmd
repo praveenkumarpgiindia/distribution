@@ -5,8 +5,8 @@ output: html_notebook
 
 ```{bash}
 git status
-git add distribution.Rmd
-git commit -m  "file renamed"
+git add distribution.Rmd samplesize.Rmd
+git commit -m  "two files separately created and udpated"
 git push -u origin_3 main
 ```
 
