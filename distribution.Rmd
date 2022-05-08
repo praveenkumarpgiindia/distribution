@@ -2,15 +2,13 @@
 title: "R Notebook"
 output: html_notebook
 ---
-
+# git commit code
 ```{bash}
 git status
 git add distribution.Rmd samplesize.Rmd
-git commit -m  "two files separately created and udpated"
+git commit -m  "normal distribution implemented"
 git push -u origin_3 main
 ```
-
-
 ## Assessment of the normal distribution function for different values of x and y
 ```{r}
 
@@ -30,6 +28,7 @@ for (i in seq_along(vector_assess)) {
 
 plot(x_vector,y_vector)
 ```
+
 ## Assessment of the sigmoid distribution function for different values of x and y
 ```{r}
 
@@ -50,6 +49,7 @@ for (i in seq_along(vector_assess)) {
 
 plot(x_vector,y_vector,type = "b")
 ```
+
 # Binomial function created for estimation of probability of success for a given event of interest on providing probability of success and failure along with total number of trials
 ```{r}
 binomial = function(p , q, n, x){
