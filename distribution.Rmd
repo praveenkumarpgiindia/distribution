@@ -6,7 +6,7 @@ output: html_notebook
 ```{bash}
 git status
 git add distribution.Rmd samplesize.Rmd algorithm.Rmd
-git commit -m  "made modificaiton in heading along with function definition"
+git commit -m  "commented out and added linear regression"
 git push -u origin_3 main
 ```
 ## Assessment of the normal distribution function for different values of x and y
@@ -163,31 +163,31 @@ for (j in seq_along(vector_assess)){
 
 ```
 ```{r}
-vector_assess = seq.int(from = 0,to = 100,by = 1)
-vector_assess = 100
-x_vector = c()
-y_vector = c()
-
-lambda_vector = c(0.03)
-
-for (i in seq_along(lambda_vector)){
-for (j in seq_along(vector_assess)){
-  lambda = lambda_vector[i]
-  x_vector[j] = vector_assess[j]
-  y_vector[j] = poisson_distribution(lambda = lambda_vector[i],x = vector_assess[j])
-}
-  if(i == min(seq_along(lambda_vector))){
-  plot(x_vector,y_vector,type = "b")  
-    # print(min(seq_along(lambda_vector)))
-  }
-  else{
-    lines(x_vector,y_vector,type = "b",col = "blue")
-  }
-  
-
-}
-
-hist(y_vector)
+# vector_assess = seq.int(from = 0,to = 100,by = 1)
+# vector_assess = 100
+# x_vector = c()
+# y_vector = c()
+# 
+# lambda_vector = c(0.03)
+# 
+# for (i in seq_along(lambda_vector)){
+# for (j in seq_along(vector_assess)){
+#   lambda = lambda_vector[i]
+#   x_vector[j] = vector_assess[j]
+#   y_vector[j] = poisson_distribution(lambda = lambda_vector[i],x = vector_assess[j])
+# }
+#   if(i == min(seq_along(lambda_vector))){
+#   plot(x_vector,y_vector,type = "b")  
+#     # print(min(seq_along(lambda_vector)))
+#   }
+#   else{
+#     lines(x_vector,y_vector,type = "b",col = "blue")
+#   }
+#   
+# 
+# }
+# 
+# hist(y_vector)
 ```
 
 
