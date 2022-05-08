@@ -5,8 +5,8 @@ output: html_notebook
 
 ```{bash}
 git status
-git add samplesize.Rmd
-git commit -m  "binomial function title updated"
+git add distribution.Rmd
+git commit -m  "file renamed"
 git push -u origin_2 main
 ```
 
