@@ -1,0 +1,53 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+```{r}
+determine_var_linear_regression = function(df,x,y){
+
+  df[["xsquare"]] = c()
+  df[["ysquare"]] = c()
+  df[["xy"]] = c()
+ for (i in seq_along(1:length(df[[x]]))) {
+   
+                   df[["xsquare"]][i] = df[[x]][i]^2
+                   df[["ysquare"]][i] = df[[y]][i]^2
+                   df[["xy"]][i] = df[[x]][i] * df[[y]][i]
+                   # print(paste("Computing for ",df[[x]][i]," and ",df[[y]][i]))
+                   # print(df[["xsquare"]][i])
+                   # print(df[["ysquare"]][i])
+                   # print(df[["xy"]][i] )
+                   # print("Computation Complete")
+                   # 
+                   
+ }  
+  
+  return(df)
+              
+}
+
+data = data.frame(x = c(43,21,25,42,57,59),y = c(99,65,79,75,87,81))
+
+data
+
+data_computed = determine_var_linear_regression(df = data,x = "x",y = "y")
+
+
+linearregression = function(df){
+  
+num_a = sum(df[["y"]])*sum(df[["xsquare"]]) - sum(df[["x"]]) * sum(df[["xy"]])
+den_a = (length(df[["x"]])) * sum(df[["xsquare"]]) - (sum(df[["x"]]))^2
+  
+num_b = (length(df[["x"]]))* sum(df[["xy"]]) - sum(df[["x"]]) * sum(df[["y"]])
+den_b = (length(df[["x"]])) * sum(df[["xsquare"]]) - (sum(df[["x"]]))^2
+
+a = round(num_a/den_a,digits = 2)
+b = round(num_b/den_b,digits = 2)
+  
+print(paste("y = ",a,"+",b,"x",sep = ""))
+}
+  
+linearregression(df = data_computed)  
+```
+
