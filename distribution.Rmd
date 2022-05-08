@@ -75,3 +75,31 @@ for (i in seq_along(vector_assess)) {
 plot(x_vector,y_vector,type = "b")
 ```
 
+
+# Normal distribution
+```{r}
+
+normal_distribution = function(x,mean,sd){
+  
+  y = (1/sd* sqrt(2* pi))* 1/exp(0.5 * ((x-mean)/sd)^2)
+}
+# vector_assess = seq.int(from = -1000,to = 1000,by = 1)
+vector_assess = seq.int(from = 0,to = 100,by = 1)
+x_vector = c()
+y_vector = c()
+
+for (i in seq_along(vector_assess)){
+  mean = mean(vector_assess,na.rm = TRUE)
+  sd = sd(vector_assess,na.rm = TRUE)
+  x_vector[i] = vector_assess[i]
+  y_vector[i] = normal_distribution(x=vector_assess[i],mean = mean,sd = sd)
+  if (i == length(vector_assess)) {
+    print(mean)
+    print(sd)
+  }
+}
+
+
+plot(x_vector,y_vector,type = "b")
+```
+
