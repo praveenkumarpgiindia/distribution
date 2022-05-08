@@ -19,3 +19,22 @@ samplesize_twosampleproportion(p1 = 0.45,p0 = 0.10,alpha = 0.05,beta = 0.2,super
 
 ```
 
+```{r}
+
+x_vector = c()
+y_vector = c()
+vector_assess = seq.int(0.001,0.99,0.001)
+for (i in seq_along(vector_assess)) {
+  x_vector[i] <- vector_assess[i]
+  y_vector[i] <- qnorm(vector_assess[i])
+  # print(y_vector)
+  # print(x_vector)
+  
+}
+
+# x_vector
+# y_vector
+
+plot(x_vector,y_vector)
+```
+
