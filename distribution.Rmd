@@ -7,7 +7,7 @@ output: html_notebook
 git status
 git add distribution.Rmd
 git commit -m  "file renamed"
-git push -u origin_2 main
+git push -u origin_3 main
 ```
 
 # Two sample size proportion estimation
