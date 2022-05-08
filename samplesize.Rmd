@@ -1,0 +1,22 @@
+---
+title: "R Notebook"
+output: html_notebook
+---
+
+# Two sample size proportion estimation
+
+```{r}
+
+samplesize_twosampleproportion <- function(p1,p0,alpha, beta, superiority_delta){
+  num = qnorm(alpha) + qnorm(beta)
+  denom = p1 - p0 - superiority_delta
+  
+    n = ( (p1 * (1- p1)) + (p0 * (1-p0))) * ((num)/(denom))^2
+  
+  return(n) 
+  
+}
+
+samplesize_twosampleproportion(p1 = 0.45,p0 = 0.10,alpha = 0.05,beta = 0.2,superiority_delta = 0.05)
+
+```
