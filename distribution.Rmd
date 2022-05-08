@@ -75,7 +75,6 @@ for (i in seq_along(vector_assess)) {
 plot(x_vector,y_vector,type = "b")
 ```
 
-
 # Normal distribution
 ```{r}
 
@@ -101,5 +100,18 @@ for (i in seq_along(vector_assess)){
 
 
 plot(x_vector,y_vector,type = "b")
+```
+
+```{r}
+
+mean = mean(vector_assess,na.rm = TRUE)
+sd = sd(vector_assess,na.rm= TRUE)
+par(mfrow=c(2,2))
+plot(vector_assess,dnorm(vector_assess,mean = mean,sd = sd),type = "b",xlab = "input vector",ylab = "dnorm",main = "dnorm")
+plot(vector_assess,pnorm(vector_assess,mean = mean,sd = sd),type = "b",xlab = "input vector",ylab = "pnorm",main = "pnorm")
+# plot(vector_assess,qnorm(vector_assess,mean = mean,sd = sd),type = "b",xlab = "input vector",ylab = "qnorm",main = "qnorm")
+plot(vector_assess,rnorm(vector_assess,mean = mean,sd = sd),type = "b",xlab = "input vector",ylab = "rnorm",main = "rnorm")
+
+# qnorm(vector_assess,mean = mean,sd = sd)
 ```
 
