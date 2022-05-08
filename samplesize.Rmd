@@ -3,6 +3,8 @@ title: "R Notebook"
 output: html_notebook
 ---
 
+# Two sample size proportion estimation
+
 ```{r}
 
 samplesize_twosampleproportion <- function(p1,p0,alpha, beta, superiority_delta){
@@ -18,7 +20,7 @@ samplesize_twosampleproportion <- function(p1,p0,alpha, beta, superiority_delta)
 samplesize_twosampleproportion(p1 = 0.45,p0 = 0.10,alpha = 0.05,beta = 0.2,superiority_delta = 0.05)
 
 ```
-
+## Assessment of the normal distribution function for different values of x and y
 ```{r}
 
 x_vector = c()
@@ -37,4 +39,23 @@ for (i in seq_along(vector_assess)) {
 
 plot(x_vector,y_vector)
 ```
+## Assessment of the sigmoid distribution function for different values of x and y
+```{r}
 
+x_vector = c()
+y_vector = c()
+# vector_assess = c(-Inf,-1,0, 1, Inf)
+vector_assess = c(-Inf,-100,-50,-10,-9,-8,-7,-6,-5,-4,-3,-2,-1,0,1,2,3,4,5,6,7,8,9,10,50,100,Inf)
+for (i in seq_along(vector_assess)) {
+  x_vector[i] <- vector_assess[i]
+  y_vector[i] <- 1/(1+(1/exp(vector_assess[i])))
+  # print(y_vector)
+  # print(x_vector)
+  
+}
+
+# x_vector
+# y_vector
+
+plot(x_vector,y_vector,type = "b")
+```
