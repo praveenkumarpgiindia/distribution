@@ -6,7 +6,7 @@ output: html_notebook
 ```{bash}
 git status
 git add distribution.Rmd samplesize.Rmd
-git commit -m  "normal distribution implemented"
+git commit -m  "spacing issues corrected"
 git push -u origin_3 main
 ```
 ## Assessment of the normal distribution function for different values of x and y
