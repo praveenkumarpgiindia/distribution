@@ -6,7 +6,7 @@ output: html_notebook
 ```{bash}
 git status
 git add distribution.Rmd samplesize.Rmd
-git commit -m  "added poisson distribution"
+git commit -m  "made modificaiton in heading along with function definition"
 git push -u origin_3 main
 ```
 ## Assessment of the normal distribution function for different values of x and y
@@ -29,7 +29,7 @@ for (i in seq_along(vector_assess)) {
 plot(x_vector,y_vector)
 ```
 
-## Assessment of the sigmoid distribution function for different values of x and y
+## Sigmoid distribution function
 ```{r}
 
 x_vector = c()
@@ -50,13 +50,18 @@ for (i in seq_along(vector_assess)) {
 plot(x_vector,y_vector,type = "b")
 ```
 
-# Binomial function created for estimation of probability of success for a given event of interest on providing probability of success and failure along with total number of trials
+# Binomial function 
 ```{r}
 binomial = function(p , q, n, x){
   p = choose(n, x) * p^x * q^(n-x)
   return(p)
 }
-
+# where
+# 
+# p is the probability of success
+# q is the probability of failure
+# x is the expected event
+# n is the total number of events
 
 vector_assess = seq.int(from = 0,to = 100,by = 1)
 x_vector = c()
@@ -82,6 +87,11 @@ normal_distribution = function(x,mean,sd){
   
   y = (1/sd* sqrt(2* pi))* 1/exp(0.5 * ((x-mean)/sd)^2)
 }
+
+# where 
+# mean is the average of the distribution
+# sd is the standard deviation of the distribution
+
 # vector_assess = seq.int(from = -1000,to = 1000,by = 1)
 vector_assess = seq.int(from = 0,to = 100,by = 1)
 x_vector = c()
